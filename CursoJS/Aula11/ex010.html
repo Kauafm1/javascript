@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do carro: <input type="number" name="vel" id="vel"> Km/h
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id="donga">
+        o resultado é:
+    </div>
+    <script>
+        
+        function calcular(){
+            /* 
+            Atenção ao tipo de variável da comparação do if.
+            No caso desse exercício, cometi um erro de colocar 
+            na condição do if a var v, sendo que ela ainda era 
+            uma string e esqueci de salvar a formatação de variável 
+            em outra var (por isso tem duas var relacionada a velocidade) 
+            */
+            var d = document.querySelector('div#donga')
+            var v = document.querySelector('input#vel')
+            var velo = Number(v.value)
+            if(velo > 100){
+                    d.innerHTML = 'MULTADO'
+            }else{
+                    d.innerHTML = 'Tudo nos conformes'
+            }
+
+
+        }
+    </script>
+
+</body>
+</html>
